@@ -1,0 +1,33 @@
+INC_DIR= ../../include
+LIB_DIR= ../../lib
+BIN_DIR= ../../bin
+
+LDFLAG=@LDFLAG@ -L$(LIB_DIR)
+LIBS= -lARgsubUtil -lARgsub -lARvideo -lAR @LIBS@
+CFLAG= @CFLAG@ -I$(INC_DIR)
+
+OBJS = object.o draw_object.o
+HEADDERS = object.h draw_object.h
+
+all: $(BIN_DIR)/optical
+
+$(BIN_DIR)/optical: optical.o $(OBJS)
+	cc -o $(BIN_DIR)/optical optical.o $(OBJS) $(LDFLAG) $(LIBS)
+
+optical.o: optical.c $(HEADDERS)
+	cc -c $(CFLAG) optical.c
+
+object.o: object.c $(HEADDERS)
+	cc -c $(CFLAG) object.c
+
+draw_object.o: draw_object.c $(HEADDERS)
+	cc -c $(CFLAG) draw_object.c
+
+clean:
+	rm -f *.o
+	rm -f $(BIN_DIR)/optical
+
+allclean:
+	rm -f *.o
+	rm -f $(BIN_DIR)/optical
+	rm -f Makefile

@@ -1,0 +1,354 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+
+<meta name="google-site-verification" content="CjkdY6BqKWAVmQ78_iSq6J7ZZ9AoL7-CjFVBYGg9FU4">
+<script src="tum_ardrone_drone_autopilot%20-%20ROS%20Wiki_files/ga.js" async="" type="text/javascript"></script><script type="text/javascript" src="tum_ardrone_drone_autopilot%20-%20ROS%20Wiki_files/sorttable.js"></script>
+<script type="text/javascript" src="tum_ardrone_drone_autopilot%20-%20ROS%20Wiki_files/ASCIIMathML.js"></script>
+<script type="text/javascript" src="tum_ardrone_drone_autopilot%20-%20ROS%20Wiki_files/jquery-1.js"></script>                         
+<script type="text/javascript" src="tum_ardrone_drone_autopilot%20-%20ROS%20Wiki_files/seesaw.js"></script> 
+<script type="text/javascript" src="tum_ardrone_drone_autopilot%20-%20ROS%20Wiki_files/rosversion.js"></script> 
+<script type="text/javascript" src="tum_ardrone_drone_autopilot%20-%20ROS%20Wiki_files/RGraph_002.js"></script>
+<script type="text/javascript" src="tum_ardrone_drone_autopilot%20-%20ROS%20Wiki_files/RGraph.js"></script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17821189-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="index,nofollow">
+
+<title>tum_ardrone/drone_autopilot - ROS Wiki</title>
+<script type="text/javascript" src="tum_ardrone_drone_autopilot%20-%20ROS%20Wiki_files/common.js"></script>
+
+<script type="text/javascript">
+<!--
+var search_hint = "Search";
+//-->
+</script>
+
+
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="tum_ardrone_drone_autopilot%20-%20ROS%20Wiki_files/common.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="tum_ardrone_drone_autopilot%20-%20ROS%20Wiki_files/screen.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="tum_ardrone_drone_autopilot%20-%20ROS%20Wiki_files/print.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="tum_ardrone_drone_autopilot%20-%20ROS%20Wiki_files/projection.css">
+
+<!-- css only for MS IE6/IE7 browsers -->
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="/moin_static193/rostheme/css/msie.css">
+<![endif]-->
+
+
+
+
+
+<link rel="Start" href="http://ros.org/wiki/Documentation">
+<link rel="Alternate" title="Wiki Markup" href="http://ros.org/wiki/tum_ardrone/drone_autopilot?action=raw">
+<link rel="Alternate" media="print" title="Print View" href="http://ros.org/wiki/tum_ardrone/drone_autopilot?action=print">
+<link rel="Up" href="http://ros.org/wiki/tum_ardrone">
+<link rel="Search" href="http://ros.org/wiki/FindPage">
+<link rel="Index" href="http://ros.org/wiki/TitleIndex">
+<link rel="Glossary" href="http://ros.org/wiki/WordIndex">
+<link rel="Help" href="http://ros.org/wiki/HelpOnFormatting">
+</head>
+
+<body dir="ltr" lang="en">
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="tum_ardrone_drone_autopilot%20-%20ROS%20Wiki_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-5950817-2");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+<script type="text/javascript">
+<!--// Initialize search form
+var f = document.getElementById('searchform');
+f.getElementsByTagName('label')[0].style.display = 'none';
+var e = document.getElementById('searchinput');
+searchChange(e);
+searchBlur(e);
+
+function handleSubmit() {
+  var f = document.getElementById('searchform');
+  var t = document.getElementById('searchinput');
+  var r = document.getElementById('real_searchinput');
+  
+  //alert("handleSubmit "+ t.value);
+  if(t.value.match(/review/)) {
+    r.value = t.value;
+  } else {
+    //r.value = t.value + " -PackageReviewCategory -StackReviewCategory -M3Review -DocReview -ApiReview -HelpOn -BadContent -LocalSpellingWords";
+    r.value = t.value + " -PackageReviewCategory -StackReviewCategory -DocReview -ApiReview";
+  }
+  //return validate(f);
+}
+//-->
+</script>
+
+<div id="dpage">
+  <div id="dpage-inner">
+    <div id="header"><div id="topnav">
+      <table id="topnav-table">
+        <tbody><tr>
+          <td valign="top" width="300"><a href="http://ros.org/"><img src="tum_ardrone_drone_autopilot%20-%20ROS%20Wiki_files/ros_org.png" alt="ros.org" height="51" border="0" width="238"></a></td>
+          <td valign="middle">
+            <a href="http://ros.org/wiki/About%20ros.org">About</a>
+            |
+            <a href="http://ros.org/wiki/Support">Support</a>
+            |
+            <a href="http://answers.ros.org/">answers.ros.org</a>
+
+<!--   <a href="http://roscon.ros.org/?page_id=109"><img align="middle" style="padding-left: 15px;" src="http://ros.org/images/roscon_wiki_header.png" width="133" height="38" alt="roscon" /></a> -->
+
+          </td>
+
+          <td align="right" valign="middle">
+
+<script language="Javascript">
+
+function Searchy(theButton){
+
+theForm = theButton.form;
+newID = theForm.input.value;
+theForm.q.value = newID;
+theForm.input.value=theForm.input.value
+
+}
+</script>
+
+
+<form action="http://www.ros.org/search/index.html" id="cse">
+  <div>
+    <label>Search:</label>
+    <input name="cx" value="013029357434904786434:afn5eukzpgg" type="hidden">
+    <input name="cof" value="FORID:11;NB:1" type="hidden">
+    <input name="filter" value="0" type="hidden">
+    <input name="num" value="10" type="hidden">
+
+    <input name="ie" value="UTF-8" type="hidden">
+    <input name="input" id="input" autocomplete="on" style="width: 35%" type="text">
+    <input name="q" value="" type="hidden">
+    <input name="sa" value="Submit" onclick="Searchy(this)" type="submit">
+
+  </div>
+</form>
+
+         </td>
+      </tr>
+      <tr>
+        <td colspan="3" height="53" width="1024"><nobr><img src="tum_ardrone_drone_autopilot%20-%20ROS%20Wiki_files/menu_left.png" alt="" height="53" width="17"><a href="http://ros.org/wiki/"><img src="tum_ardrone_drone_autopilot%20-%20ROS%20Wiki_files/menu_documentation.png" alt="Documentation" height="53" border="0" width="237"></a><img src="tum_ardrone_drone_autopilot%20-%20ROS%20Wiki_files/menu_spacer.png" height="53" width="69"><a href="http://www.ros.org/browse/"><img src="tum_ardrone_drone_autopilot%20-%20ROS%20Wiki_files/menu_browse_software.png" alt="Browse Software" height="53" border="0" width="268"></a><img src="tum_ardrone_drone_autopilot%20-%20ROS%20Wiki_files/menu_spacer.png" height="53" width="69"><a href="http://www.ros.org/news"><img src="tum_ardrone_drone_autopilot%20-%20ROS%20Wiki_files/menu_news.png" alt="News" height="53" border="0" width="84"></a><img src="tum_ardrone_drone_autopilot%20-%20ROS%20Wiki_files/menu_spacer.png" height="53" width="69"><a href="http://www.ros.org/wiki/ROS/Installation"><img src="tum_ardrone_drone_autopilot%20-%20ROS%20Wiki_files/menu_download.png" alt="Download" height="53" border="0" width="151"></a><img src="tum_ardrone_drone_autopilot%20-%20ROS%20Wiki_files/menu_right.png" height="53" width="60"></nobr></td>
+
+      </tr>
+    </tbody></table> <!-- topnav-table -->
+
+    </div> <!-- /#topav -->
+  </div> <!-- /#header -->
+
+
+<div id="header2">
+
+<ul id="pagelocation">
+<li><a href="http://ros.org/wiki/tum_ardrone">tum_ardrone</a></li><li><a class="backlink" href="http://ros.org/wiki/tum_ardrone/drone_autopilot?action=fullsearch&amp;context=180&amp;value=linkto%3A%22tum_ardrone%2Fdrone_autopilot%22" rel="nofollow" title="Click to do a full-text search for this title">drone_autopilot</a></li>
+</ul>
+
+<div id="locationline">
+</div>
+</div>
+
+<div id="sidebar">
+<div class="sidepanel">
+<h1>Wiki</h1>
+
+<ul id="navibar">
+<li class="wikilink"><a href="http://ros.org/wiki/ROS">ROS</a></li><li class="wikilink"><a href="http://ros.org/wiki/StackList">StackList</a></li><li class="wikilink"><a href="http://ros.org/wiki/RecentChanges">RecentChanges</a></li><li class="current"><a href="http://ros.org/wiki/tum_ardrone/drone_autopilot">drone_autopilot</a></li>
+</ul>
+
+</div>
+<div class="sidepanel">
+<h1>Page</h1>
+<ul class="editbar"><li><span class="disabled">Immutable Page</span></li><li class="toggleCommentsButton" style="display:none;"><a href="#" class="nbcomment" onclick="toggleComments();return false;">Comments</a></li><li><a class="nbinfo" href="http://ros.org/wiki/tum_ardrone/drone_autopilot?action=info" rel="nofollow">Info</a></li><li><a class="nbattachments" href="http://ros.org/wiki/tum_ardrone/drone_autopilot?action=AttachFile" rel="nofollow">Attachments</a></li><li>
+<form class="actionsmenu" method="GET" action="/wiki/tum_ardrone/drone_autopilot">
+<div>
+    
+    <select name="action" onchange="if ((this.selectedIndex != 0) &amp;&amp;
+                      (this.options[this.selectedIndex].disabled == false)) {
+                this.form.submit();
+            }
+            this.selectedIndex = 0;">
+        <option selected="selected" value="show">More Actions:</option><option value="raw">Raw Text</option>
+<option value="print">Print View</option>
+<option value="show" disabled="disabled" class="disabled">Delete Cache</option>
+<option value="show" disabled="disabled" class="disabled">------------------------</option>
+<option value="SpellCheck">Check Spelling</option>
+<option value="LikePages">Like Pages</option>
+<option value="LocalSiteMap">Local Site Map</option>
+<option value="show" disabled="disabled" class="disabled">------------------------</option>
+<option value="RenamePage" disabled="disabled" class="disabled">Rename Page</option>
+<option value="DeletePage" disabled="disabled" class="disabled">Delete Page</option>
+<option value="show" disabled="disabled" class="disabled">------------------------</option>
+<option value="show" disabled="disabled" class="disabled">Subscribe User</option>
+<option value="show" disabled="disabled" class="disabled">------------------------</option>
+<option value="show" disabled="disabled" class="disabled">Remove Spam</option>
+<option value="show" disabled="disabled" class="disabled">Revert to this revision</option>
+<option value="PackagePages">Package Pages</option>
+<option value="SyncPages">Sync Pages</option>
+<option value="show" disabled="disabled" class="disabled">------------------------</option>
+<option value="CreatePdfDocument">CreatePdfDocument</option>
+<option value="Load">Load</option>
+<option value="RawFile">RawFile</option>
+<option value="Save">Save</option>
+<option value="SlideShow">SlideShow</option>
+    </select>
+    
+    
+</div>
+<script type="text/javascript">
+<!--// Init menu
+actionsMenuInit('More Actions:');
+//-->
+</script>
+</form>
+</li></ul>
+
+</div>
+<div class="sidepanel">
+<h1>User</h1>
+<ul id="username"><li><a href="http://ros.org/wiki/tum_ardrone/drone_autopilot?action=login" id="login" rel="nofollow">Login</a></li></ul>
+</div>
+</div>
+
+<div id="page" dir="ltr" lang="en">
+<div dir="ltr" id="content" lang="en"><span class="anchor" id="top"></span>
+<span class="anchor" id="line-1"></span><p class="line867">
+
+
+<span style="text-align:left">&nbsp;&nbsp;<a href="javascript:toggleDocStatus()">Documentation Status</a></span></p><div id="doc_status" style="background:#CCCCCC;display:none;margin-top:0px;margin-bottom:0px;padding-top:0px"><ul style="padding-top:5px;margin-top:0px;margin-bottom:0px;padding-bottom:5px;"><li><b>electric:</b> Cannot load information on <strong>name: drone_autopilot, distro: electric</strong>, which means that it is not yet in our index.
+Please see <a href="http://www.ros.org/wiki/Get%20Involved#Indexing_Your_.2A-ros-pkg_Repository_for_Documentation_Generation">this page</a> for information on how to submit your repository to our index.</li><br><li><b>fuerte:</b> Cannot load information on <strong>name: drone_autopilot, distro: fuerte</strong>, which means that it is not yet in our index.
+Please see <a href="http://www.ros.org/wiki/Get%20Involved#Indexing_Your_.2A-ros-pkg_Repository_for_Documentation_Generation">this page</a> for information on how to submit your repository to our index.</li><br><li><b>groovy:</b> Cannot load information on <strong>name: drone_autopilot, distro: groovy</strong>, which means that it is not yet in our index.
+Please see <a href="http://www.ros.org/wiki/Get%20Involved#Indexing_Your_.2A-ros-pkg_Repository_for_Documentation_Generation">this page</a> for information on how to submit your repository to our index.</li><br><li><b>hydro:</b> Cannot load information on <strong>name: drone_autopilot, distro: hydro</strong>, which means that it is not yet in our index.
+Please see <a href="http://www.ros.org/wiki/Get%20Involved#Indexing_Your_.2A-ros-pkg_Repository_for_Documentation_Generation">this page</a> for information on how to submit your repository to our index.</li><br></ul></div><div style="display: none;" class="version electric">Cannot load information on <strong>name: drone_autopilot, distro: electric</strong>, which means that it is not yet in our index.
+Please see <a href="http://www.ros.org/wiki/Get%20Involved#Indexing_Your_.2A-ros-pkg_Repository_for_Documentation_Generation">this page</a> for information on how to submit your repository to our index.</div>
+<div style="display: none;" class="version fuerte">Cannot load information on <strong>name: drone_autopilot, distro: fuerte</strong>, which means that it is not yet in our index.
+Please see <a href="http://www.ros.org/wiki/Get%20Involved#Indexing_Your_.2A-ros-pkg_Repository_for_Documentation_Generation">this page</a> for information on how to submit your repository to our index.</div>
+<div style="display: none;" class="version groovy">Cannot load information on <strong>name: drone_autopilot, distro: groovy</strong>, which means that it is not yet in our index.
+Please see <a href="http://www.ros.org/wiki/Get%20Involved#Indexing_Your_.2A-ros-pkg_Repository_for_Documentation_Generation">this page</a> for information on how to submit your repository to our index.</div>
+<div style="display: none;" class="version hydro">Cannot load information on <strong>name: drone_autopilot, distro: hydro</strong>, which means that it is not yet in our index.
+Please see <a href="http://www.ros.org/wiki/Get%20Involved#Indexing_Your_.2A-ros-pkg_Repository_for_Documentation_Generation">this page</a> for information on how to submit your repository to our index.</div> <span class="anchor" id="line-2"></span><div class="table-of-contents"><p class="table-of-contents-heading">Contents</p><ol><li>
+<a href="#General">General</a></li><li>
+<a href="#Scripting_Language:">Scripting Language:</a></li><li>
+<a href="#Parameters">Parameters</a></li><li>
+<a href="#Topics">Topics</a></li><li>
+<a href="#Dynamically_Reconfigurable_Parameters">Dynamically Reconfigurable Parameters</a></li></ol></div><p class="line874"> <span class="anchor" id="line-3"></span><span class="anchor" id="line-4"></span></p><p class="line867">
+</p><h1 id="General">General</h1>
+<span class="anchor" id="line-5"></span><p class="line874">PID 
+controller for the drone. Also includes basic way-point-following and 
+automatic initialization. Requires drone_stateestimation to be running. <span class="anchor" id="line-6"></span>The target is set via the /tum_ardrone/cmd topic. <span class="anchor" id="line-7"></span><span class="anchor" id="line-8"></span></p><p class="line874">The methods used are described in the following publications: <span class="anchor" id="line-9"></span></p><ul><li><p class="line891"><a class="https" href="https://vision.in.tum.de/_media/spezial/bib/engel12iros.pdf">Camera-Based Navigation of a Low-Cost Quadrocopter</a> (J. Engel, J. Sturm, D. Cremers) <span class="anchor" id="line-10"></span></p></li><li><p class="line891"><a class="https" href="https://vision.in.tum.de/_media/spezial/bib/engel12vicomor.pdf">Accurate Figure Flying with a Quadrocopter Using Onboard Visual and Inertial Sensing</a> (J. Engel, J. Sturm, D. Cremers) <span class="anchor" id="line-11"></span></p></li></ul><p class="line874">This node in particular implements <span class="anchor" id="line-12"></span></p><ul><li>the PID controller for the Parrot AR.Drone <span class="anchor" id="line-13"></span></li><li>the automatic initialization procedure / scripting language to control the autopilot. <span class="anchor" id="line-14"></span><span class="anchor" id="line-15"></span></li></ul><p class="line867">
+</p><h1 id="Scripting_Language:">Scripting Language:</h1>
+<span class="anchor" id="line-16"></span><p class="line862">The behavior of the autopilot is set by sending commands on <em>/tum_ardrone/com</em>
+ of the form "c COMMAND". A Queue of commands is kept, and as soon as 
+one command is finished (for example a way point reached), the next 
+command is popped. The queue can be cleared by sending "c 
+clearCommands". Commands can be sent using the drone_gui node. <span class="anchor" id="line-17"></span>Some example scripts can be found in /flightPlans/*.txt. <span class="anchor" id="line-18"></span><span class="anchor" id="line-19"></span></p><p class="line867"><span class="anchor" id="line-20"></span><span class="anchor" id="line-21"></span><span class="anchor" id="line-22"></span><span class="anchor" id="line-23"></span><span class="anchor" id="line-24"></span><span class="anchor" id="line-25"></span><span class="anchor" id="line-26"></span><span class="anchor" id="line-27"></span><span class="anchor" id="line-28"></span><span class="anchor" id="line-29"></span><span class="anchor" id="line-30"></span><span class="anchor" id="line-31"></span><span class="anchor" id="line-32"></span><span class="anchor" id="line-33"></span><span class="anchor" id="line-34"></span><span class="anchor" id="line-35"></span><span class="anchor" id="line-36"></span><span class="anchor" id="line-37"></span><span class="anchor" id="line-38"></span><span class="anchor" id="line-39"></span><span class="anchor" id="line-40"></span><span class="anchor" id="line-41"></span><span class="anchor" id="line-42"></span><span class="anchor" id="line-43"></span><span class="anchor" id="line-44"></span><span class="anchor" id="line-45"></span><span class="anchor" id="line-46"></span><span class="anchor" id="line-47"></span><span class="anchor" id="line-48"></span><span class="anchor" id="line-49"></span><span class="anchor" id="line-50"></span><span class="anchor" id="line-51"></span><span class="anchor" id="line-52"></span><span class="anchor" id="line-53"></span><span class="anchor" id="line-54"></span><span class="anchor" id="line-55"></span><span class="anchor" id="line-56"></span><span class="anchor" id="line-57"></span><span class="anchor" id="line-58"></span><span class="anchor" id="line-59"></span><span class="anchor" id="line-60"></span><span class="anchor" id="line-61"></span><span class="anchor" id="line-62"></span><span class="anchor" id="line-63"></span><span class="anchor" id="line-64"></span><span class="anchor" id="line-65"></span><span class="anchor" id="line-66"></span><span class="anchor" id="line-67"></span><span class="anchor" id="line-68"></span><span class="anchor" id="line-69"></span><span class="anchor" id="line-70"></span><span class="anchor" id="line-71"></span><span class="anchor" id="line-72"></span><span class="anchor" id="line-73"></span><span class="anchor" id="line-74"></span><span class="anchor" id="line-75"></span><span class="anchor" id="line-76"></span><span class="anchor" id="line-77"></span><span class="anchor" id="line-78"></span></p><pre><span class="anchor" id="line-1-1"></span>autoInit [int moveTimeMS] [int waitTimeMS] [int riseTimeMs] [float initSpeed]
+<span class="anchor" id="line-2-1"></span>        takes control, starts drone, initializes PTAM. That is:
+<span class="anchor" id="line-3-1"></span>        - starts the drone &amp; and waits riseTimeMs, the drone will rise to approx. 
+<span class="anchor" id="line-4-1"></span>          a height of 1m. 
+<span class="anchor" id="line-5-1"></span>        - initializes PTAM by taking the first KF, flying up (sending initSpeed as control command) for moveTimeMS, 
+<span class="anchor" id="line-6-1"></span>          waiting waitTimeMS and then taking the second KF. 
+<span class="anchor" id="line-7-1"></span>          This is done until success (flying up and down respectively).
+<span class="anchor" id="line-8-1"></span>        - good default values are "autoInit 500 800 4000 0.5" 
+<span class="anchor" id="line-9-1"></span>
+<span class="anchor" id="line-10-1"></span>autoTakeover [int moveTimeMS] [int waitTimeMS] [int riseTimeMs] [float initSpeed]
+<span class="anchor" id="line-11-1"></span>        takes control, initializes PTAM. The same as autoInit ..., 
+<span class="anchor" id="line-12-1"></span>        but to be used when the drone is already flying (skipps the first step).
+<span class="anchor" id="line-13-1"></span>
+<span class="anchor" id="line-14-1"></span>takeoff 
+<span class="anchor" id="line-15-1"></span>        - takes control, starts drone.
+<span class="anchor" id="line-16-1"></span>        - does not reset map or initialize PTAM
+<span class="anchor" id="line-17-1"></span>
+<span class="anchor" id="line-18-1"></span>setReference [doube x] [double y] [double z] [double yaw]
+<span class="anchor" id="line-19-1"></span>        sets reference point (used in goto X X X X).
+<span class="anchor" id="line-20-1"></span>  
+<span class="anchor" id="line-21-1"></span>setMaxControl [double cap = 1.0]
+<span class="anchor" id="line-22-1"></span>        maximal control sent is capped at [cap], causing the drone to fly slower.
+<span class="anchor" id="line-23-1"></span>        
+<span class="anchor" id="line-24-1"></span>setInitialReachDist [double dist = 0.2]
+<span class="anchor" id="line-25-1"></span>        drone has to come this close to a way point initially
+<span class="anchor" id="line-26-1"></span>
+<span class="anchor" id="line-27-1"></span>setStayWithinDist [double dist = 0.5]
+<span class="anchor" id="line-28-1"></span>        drone has to stay this close to a way point for a certain amount of time.
+<span class="anchor" id="line-29-1"></span>        
+<span class="anchor" id="line-30-1"></span>setStayTime [double seconds = 2.0]
+<span class="anchor" id="line-31-1"></span>        time the drone has to stay within [stayWithinDist] for target to be reached.
+<span class="anchor" id="line-32-1"></span>        
+<span class="anchor" id="line-33-1"></span>
+<span class="anchor" id="line-34-1"></span>
+<span class="anchor" id="line-35-1"></span>clearCommands
+<span class="anchor" id="line-36-1"></span>        clears all targets, such that the next command is executed immediately.
+<span class="anchor" id="line-37-1"></span>
+<span class="anchor" id="line-38-1"></span>goto [doube x] [double y] [double z] [double yaw]
+<span class="anchor" id="line-39-1"></span>        flies to position (x,y,z yaw), relative to current reference point.
+<span class="anchor" id="line-40-1"></span>        blocks until target is reached according to set parameters
+<span class="anchor" id="line-41-1"></span>
+<span class="anchor" id="line-42-1"></span>moveBy [doube x] [double y] [double z] [double yaw]
+<span class="anchor" id="line-43-1"></span>        moves by (x,y,z,yaw), relative to the current target position
+<span class="anchor" id="line-44-1"></span>        blocks until target is reached according to set parameters
+<span class="anchor" id="line-45-1"></span>
+<span class="anchor" id="line-46-1"></span>moveByRel [doube x] [double y] [double z] [double yaw]
+<span class="anchor" id="line-47-1"></span>        moves by (x,y,z,yaw), relative to the current estimated position 
+<span class="anchor" id="line-48-1"></span>        of the drone
+<span class="anchor" id="line-49-1"></span>        blocks until target is reached according to set parameters
+<span class="anchor" id="line-50-1"></span>        
+<span class="anchor" id="line-51-1"></span>land
+<span class="anchor" id="line-52-1"></span>        initializes landing (use auto-land of drone)
+<span class="anchor" id="line-53-1"></span>        
+<span class="anchor" id="line-54-1"></span>lockScaleFP
+<span class="anchor" id="line-55-1"></span>        sets the one point that does not change when the scale is re-estimated 
+<span class="anchor" id="line-56-1"></span>        to the current drone position. The scaleFP can only be set when PTAM is 
+<span class="anchor" id="line-57-1"></span>        good, i.e. this is delayed until PTAM is initialized and good.
+<span class="anchor" id="line-58-1"></span>        Need to set useWorldFixpoint in dynammic_reconfigure.</pre><span class="anchor" id="line-79"></span><span class="anchor" id="line-80"></span><span class="anchor" id="line-81"></span><p class="line867">
+</p><h1 id="Parameters">Parameters</h1>
+<span class="anchor" id="line-82"></span><p class="line867"><tt>~minPublishFreq</tt>:
+ usually, a control command is sent for each pose estimate received from
+ drone_stateestimation. However, if no pose estimate is received for 
+more than minPublishFreq milliseconds, a HOVER command is sent, causing 
+the drone to hover if for example drone_stateestimation is shut down 
+suddenly. Default: 110. <span class="anchor" id="line-83"></span><span class="anchor" id="line-84"></span></p><p class="line867">
+</p><h1 id="Topics">Topics</h1>
+<span class="anchor" id="line-85"></span><ul><li>reads /ardrone/predictedPose <span class="anchor" id="line-86"></span></li><li>writes /cmd_vel <span class="anchor" id="line-87"></span></li><li>writes /ardrone/land <span class="anchor" id="line-88"></span></li><li>writes /ardrone/takeoff <span class="anchor" id="line-89"></span></li><li>writes /ardrone/reset <span class="anchor" id="line-90"></span><span class="anchor" id="line-91"></span><span class="anchor" id="line-92"></span></li></ul><p class="line867">
+</p><h1 id="Dynamically_Reconfigurable_Parameters">Dynamically Reconfigurable Parameters</h1>
+<span class="anchor" id="line-93"></span><p class="line862">See the <a href="http://ros.org/wiki/dynamic_reconfigure">dynamic_reconfigure</a> package for details on dynamically reconfigurable parameters. <span class="anchor" id="line-94"></span></p><ul><li><p class="line891"><tt>Ki_X,&nbsp;Kd_X,&nbsp;Kp_X</tt>: PID controller parameters for roll/pitch, gaz (up/down) and yaw. <span class="anchor" id="line-95"></span></p></li><li><p class="line891"><tt>max_X</tt>: maximal respective control command sent (ever). <span class="anchor" id="line-96"></span></p></li><li><p class="line891"><tt>rise_fac</tt>:
+ rise commands are larger than respective drop commands by this factor. 
+This is due to the drone sometimes dropping unpredictably fast for large
+ drop commands, however rising somethimes requires large rise commands. <span class="anchor" id="line-97"></span></p></li><li><p class="line891"><tt>aggressiveness</tt>: multiplied to PI-component of all commands sent. Low values lead to the drone flying "slower". <span class="anchor" id="line-98"></span><span class="anchor" id="line-99"></span></p></li></ul><p class="line867"><span class="anchor" id="line-100"></span></p><p class="line867"><span class="anchor" id="line-101"></span><span class="anchor" id="bottom"></span></p></div></div>
+<div id="pagebottom"></div>
+</div>
+
+<p id="pageinfo" class="info" dir="ltr" lang="en">Wiki: tum_ardrone/drone_autopilot  (last edited 2013-02-12 11:45:14 by <span title="JakobEngel @ eduroam-hg-dock-1-51.ethz.ch[129.132.15.51]"><a class="nonexistent" href="http://ros.org/wiki/JakobEngel" title="JakobEngel @ eduroam-hg-dock-1-51.ethz.ch[129.132.15.51]">JakobEngel</a></span>)</p>
+
+
+
+
+<div class="footer">
+Except where otherwise noted, the ROS wiki is licensed under <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0</a>.
+</div>
+
+  </div> <!-- /#dpage-inner, /#dpage -->
+
+
+
+
+
+</body></html>

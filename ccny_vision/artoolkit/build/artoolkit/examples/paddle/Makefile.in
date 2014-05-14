@@ -1,0 +1,30 @@
+INC_DIR= ../../include
+LIB_DIR= ../../lib
+BIN_DIR= ../../bin
+
+LDFLAG=@LDFLAG@ -L$(LIB_DIR)
+LIBS= -lARgsub -lARvideo -lARMulti -lAR @LIBS@
+CFLAG= @CFLAG@ -I$(INC_DIR)
+
+OBJS = paddle.o
+HEADDERS = paddle.h
+
+all: $(BIN_DIR)/paddleTest
+
+$(BIN_DIR)/paddleTest: paddleTest.o $(OBJS)
+	cc -o $(BIN_DIR)/paddleTest paddleTest.o $(OBJS) $(LDFLAG) $(LIBS)
+
+paddleTest.o: paddleTest.c $(HEADDERS)
+	cc -c $(CFLAG) paddleTest.c
+
+paddle.o: paddle.c $(HEADDERS)
+	cc -c $(CFLAG) paddle.c
+
+clean:
+	rm -f *.o
+	rm -f $(BIN_DIR)/paddleTest
+
+allclean:
+	rm -f *.o
+	rm -f $(BIN_DIR)/paddleTest
+	rm -f Makefile

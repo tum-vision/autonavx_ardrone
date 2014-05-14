@@ -1,0 +1,27 @@
+INC_DIR= ../../include
+LIB_DIR= ../../lib
+BIN_DIR= ../../bin
+
+LDFLAG=@LDFLAG@ -L$(LIB_DIR)
+LIBS= -lARgsub -lARvideo -lAR @LIBS@
+CFLAG= @CFLAG@ -I$(INC_DIR)
+
+OBJS =
+HEADDERS =
+
+all: $(BIN_DIR)/videoTest
+
+$(BIN_DIR)/videoTest: videoTest.o $(OBJS)
+	cc -o $(BIN_DIR)/videoTest videoTest.o $(OBJS) $(LDFLAG) $(LIBS)
+
+videoTest.o: videoTest.c $(HEADDERS)
+	cc -c $(CFLAG) videoTest.c
+
+clean:
+	rm -f *.o
+	rm -f $(BIN_DIR)/videoTest
+
+allclean:
+	rm -f *.o
+	rm -f $(BIN_DIR)/videoTest
+	rm -f Makefile

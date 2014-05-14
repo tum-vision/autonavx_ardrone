@@ -1,0 +1,51 @@
+#
+# For instalation. Change this to your settings.
+#
+INC_DIR = ../../../include
+LIB_DIR = ../..
+#
+#  compiler
+#
+CC= cc
+CFLAG= @CFLAG@ -I$(INC_DIR)
+#
+# For making the library
+#
+AR= ar
+ARFLAGS= @ARFLAG@
+RANLIB= @RANLIB@
+#
+#   products
+#
+LIB= ${LIB_DIR}/libARMulti.a
+INCLUDE= ${INC_DIR}/AR/config.h \
+         ${INC_DIR}/AR/matrix.h \
+         ${INC_DIR}/AR/param.h \
+         ${INC_DIR}/AR/ar.h \
+         ${INC_DIR}/AR/arMulti.h
+#
+#   compilation control
+#
+LIBOBJS= ${LIB}(arMultiReadConfigFile.o) \
+         ${LIB}(arMultiGetTransMat.o) \
+         ${LIB}(arMultiActivate.o)
+
+
+all:		${LIBOBJS}
+
+${LIBOBJS}:	${INCLUDE}
+
+.c.a:
+	${CC} -c ${CFLAG} $<
+	${AR} ${ARFLAGS} $@ $*.o
+	${RANLIB}
+	rm -f $*.o
+
+clean:
+	rm -f *.o
+	rm -f ${LIB}
+
+allclean:
+	rm -f *.o
+	rm -f ${LIB}
+	rm -f Makefile

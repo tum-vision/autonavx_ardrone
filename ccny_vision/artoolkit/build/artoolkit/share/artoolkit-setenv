@@ -1,0 +1,15 @@
+#! /bin/sh
+
+# Assume we're in the share dir.
+ARTOOLKIT_2_ROOT=`echo $0 | sed "s/\/share\/.*//"`
+if [ "`echo ${ARTOOLKIT_2_ROOT} | cut -c 1`" != "/" ]
+then
+	ARTOOLKIT_2_ROOT="`pwd`/${ARTOOLKIT_2_ROOT}"
+fi
+
+echo "ARTOOLKIT_2_ROOT=${ARTOOLKIT_2_ROOT}; export ARTOOLKIT_2_ROOT" >> ~/.profile
+echo "setenv ARTOOLKIT_2_ROOT ${ARTOOLKIT_2_ROOT}" >> ~/.cshrc
+if [ "`uname`" = "Darwin" ]
+then
+	defaults write ~/.MacOSX/environment ARTOOLKIT_2_ROOT -string "${ARTOOLKIT_2_ROOT}"; plutil -convert xml1 ~/.MacOSX/environment.plist
+fi

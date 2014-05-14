@@ -1,0 +1,48 @@
+UNAME = $(shell uname)
+
+AR_HOME = ../..
+AR_CPPFLAGS = -I$(AR_HOME)/include
+AR_LDFLAGS = -L$(AR_HOME)/lib
+
+VRML_HOME = /usr
+ifeq "$(UNAME)" "Darwin"
+    VRML_HOME = /sw
+endif
+VRML_CPPFLAGS =
+VRML_LDFLAGS = -L$(VRML_HOME)/lib
+
+CPPFLAGS = $(AR_CPPFLAGS) $(VRML_CPPFLAGS)
+CFLAGS = @CFLAG@
+CXXFLAGS = @CFLAG@
+LDFLAGS = $(AR_LDFLAGS) $(VRML_LDFLAGS) @LDFLAG@
+LIBS = -lARvrml -lARgsub_lite -lARvideo -lAR \
+    -lopenvrml -lopenvrml-gl -lstdc++ -ljpeg -lpng -lz -lm \
+    @LIBS@
+AR = ar
+ARFLAGS = @ARFLAG@
+RANLIB = @RANLIB@
+
+TARGET = $(AR_HOME)/bin/simpleVRML
+
+HEADERS = \
+    object.h
+
+OBJS = \
+    object.o \
+    simpleVRML.o
+
+default build all: $(TARGET)
+
+$(OBJS) : $(HEADERS)
+
+$(TARGET): $(OBJS)
+	$(CC) $(LDFLAGS) -o $@ $^ $(LIBS)
+
+clean:
+	-rm -f *.o *~ *.bak
+	-rm -f $(TARGET)
+
+allclean:
+	-rm -f *.o *~ *.bak
+	-rm -f $(TARGET)
+	-rm -f Makefile

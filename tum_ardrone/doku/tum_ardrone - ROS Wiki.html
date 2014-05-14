@@ -1,0 +1,376 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+
+<meta name="google-site-verification" content="CjkdY6BqKWAVmQ78_iSq6J7ZZ9AoL7-CjFVBYGg9FU4">
+<script src="tum_ardrone%20-%20ROS%20Wiki_files/ga.js" async="" type="text/javascript"></script><script type="text/javascript" src="tum_ardrone%20-%20ROS%20Wiki_files/sorttable.js"></script>
+<script type="text/javascript" src="tum_ardrone%20-%20ROS%20Wiki_files/ASCIIMathML.js"></script>
+<script type="text/javascript" src="tum_ardrone%20-%20ROS%20Wiki_files/jquery-1.js"></script>                         
+<script type="text/javascript" src="tum_ardrone%20-%20ROS%20Wiki_files/seesaw.js"></script> 
+<script type="text/javascript" src="tum_ardrone%20-%20ROS%20Wiki_files/rosversion.js"></script> 
+<script type="text/javascript" src="tum_ardrone%20-%20ROS%20Wiki_files/RGraph_002.js"></script>
+<script type="text/javascript" src="tum_ardrone%20-%20ROS%20Wiki_files/RGraph.js"></script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17821189-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="index,nofollow">
+
+<title>tum_ardrone - ROS Wiki</title>
+<script type="text/javascript" src="tum_ardrone%20-%20ROS%20Wiki_files/common.js"></script>
+
+<script type="text/javascript">
+<!--
+var search_hint = "Search";
+//-->
+</script>
+
+
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="tum_ardrone%20-%20ROS%20Wiki_files/common.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="tum_ardrone%20-%20ROS%20Wiki_files/screen.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="tum_ardrone%20-%20ROS%20Wiki_files/print.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="tum_ardrone%20-%20ROS%20Wiki_files/projection.css">
+
+<!-- css only for MS IE6/IE7 browsers -->
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="/moin_static193/rostheme/css/msie.css">
+<![endif]-->
+
+
+
+
+
+<link rel="Start" href="http://ros.org/wiki/Documentation">
+<link rel="Alternate" title="Wiki Markup" href="http://ros.org/wiki/tum_ardrone?action=raw">
+<link rel="Alternate" media="print" title="Print View" href="http://ros.org/wiki/tum_ardrone?action=print">
+<link rel="Search" href="http://ros.org/wiki/FindPage">
+<link rel="Index" href="http://ros.org/wiki/TitleIndex">
+<link rel="Glossary" href="http://ros.org/wiki/WordIndex">
+<link rel="Help" href="http://ros.org/wiki/HelpOnFormatting">
+</head>
+
+<body dir="ltr" lang="en">
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="tum_ardrone%20-%20ROS%20Wiki_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-5950817-2");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+<script type="text/javascript">
+<!--// Initialize search form
+var f = document.getElementById('searchform');
+f.getElementsByTagName('label')[0].style.display = 'none';
+var e = document.getElementById('searchinput');
+searchChange(e);
+searchBlur(e);
+
+function handleSubmit() {
+  var f = document.getElementById('searchform');
+  var t = document.getElementById('searchinput');
+  var r = document.getElementById('real_searchinput');
+  
+  //alert("handleSubmit "+ t.value);
+  if(t.value.match(/review/)) {
+    r.value = t.value;
+  } else {
+    //r.value = t.value + " -PackageReviewCategory -StackReviewCategory -M3Review -DocReview -ApiReview -HelpOn -BadContent -LocalSpellingWords";
+    r.value = t.value + " -PackageReviewCategory -StackReviewCategory -DocReview -ApiReview";
+  }
+  //return validate(f);
+}
+//-->
+</script>
+
+<div id="dpage">
+  <div id="dpage-inner">
+    <div id="header"><div id="topnav">
+      <table id="topnav-table">
+        <tbody><tr>
+          <td valign="top" width="300"><a href="http://ros.org/"><img src="tum_ardrone%20-%20ROS%20Wiki_files/ros_org.png" alt="ros.org" height="51" border="0" width="238"></a></td>
+          <td valign="middle">
+            <a href="http://ros.org/wiki/About%20ros.org">About</a>
+            |
+            <a href="http://ros.org/wiki/Support">Support</a>
+            |
+            <a href="http://answers.ros.org/">answers.ros.org</a>
+
+<!--   <a href="http://roscon.ros.org/?page_id=109"><img align="middle" style="padding-left: 15px;" src="http://ros.org/images/roscon_wiki_header.png" width="133" height="38" alt="roscon" /></a> -->
+
+          </td>
+
+          <td align="right" valign="middle">
+
+<script language="Javascript">
+
+function Searchy(theButton){
+
+theForm = theButton.form;
+newID = theForm.input.value;
+theForm.q.value = newID;
+theForm.input.value=theForm.input.value
+
+}
+</script>
+
+
+<form action="http://www.ros.org/search/index.html" id="cse">
+  <div>
+    <label>Search:</label>
+    <input name="cx" value="013029357434904786434:afn5eukzpgg" type="hidden">
+    <input name="cof" value="FORID:11;NB:1" type="hidden">
+    <input name="filter" value="0" type="hidden">
+    <input name="num" value="10" type="hidden">
+
+    <input name="ie" value="UTF-8" type="hidden">
+    <input name="input" id="input" autocomplete="on" style="width: 35%" type="text">
+    <input name="q" value="" type="hidden">
+    <input name="sa" value="Submit" onclick="Searchy(this)" type="submit">
+
+  </div>
+</form>
+
+         </td>
+      </tr>
+      <tr>
+        <td colspan="3" height="53" width="1024"><nobr><img src="tum_ardrone%20-%20ROS%20Wiki_files/menu_left.png" alt="" height="53" width="17"><a href="http://ros.org/wiki/"><img src="tum_ardrone%20-%20ROS%20Wiki_files/menu_documentation.png" alt="Documentation" height="53" border="0" width="237"></a><img src="tum_ardrone%20-%20ROS%20Wiki_files/menu_spacer.png" height="53" width="69"><a href="http://www.ros.org/browse/"><img src="tum_ardrone%20-%20ROS%20Wiki_files/menu_browse_software.png" alt="Browse Software" height="53" border="0" width="268"></a><img src="tum_ardrone%20-%20ROS%20Wiki_files/menu_spacer.png" height="53" width="69"><a href="http://www.ros.org/news"><img src="tum_ardrone%20-%20ROS%20Wiki_files/menu_news.png" alt="News" height="53" border="0" width="84"></a><img src="tum_ardrone%20-%20ROS%20Wiki_files/menu_spacer.png" height="53" width="69"><a href="http://www.ros.org/wiki/ROS/Installation"><img src="tum_ardrone%20-%20ROS%20Wiki_files/menu_download.png" alt="Download" height="53" border="0" width="151"></a><img src="tum_ardrone%20-%20ROS%20Wiki_files/menu_right.png" height="53" width="60"></nobr></td>
+
+      </tr>
+    </tbody></table> <!-- topnav-table -->
+
+    </div> <!-- /#topav -->
+  </div> <!-- /#header -->
+
+
+<div id="header2">
+
+<ul id="pagelocation">
+<li><a class="backlink" href="http://ros.org/wiki/tum_ardrone?action=fullsearch&amp;context=180&amp;value=linkto%3A%22tum_ardrone%22" rel="nofollow" title="Click to do a full-text search for this title">tum_ardrone</a></li>
+</ul>
+
+<div id="locationline">
+</div>
+</div>
+
+<div id="sidebar">
+<div class="sidepanel">
+<h1>Wiki</h1>
+
+<ul id="navibar">
+<li class="wikilink"><a href="http://ros.org/wiki/ROS">ROS</a></li><li class="wikilink"><a href="http://ros.org/wiki/StackList">StackList</a></li><li class="wikilink"><a href="http://ros.org/wiki/RecentChanges">RecentChanges</a></li><li class="current"><a href="http://ros.org/wiki/tum_ardrone">tum_ardrone</a></li>
+</ul>
+
+</div>
+<div class="sidepanel">
+<h1>Page</h1>
+<ul class="editbar"><li><span class="disabled">Immutable Page</span></li><li class="toggleCommentsButton" style="display:none;"><a href="#" class="nbcomment" onclick="toggleComments();return false;">Comments</a></li><li><a class="nbinfo" href="http://ros.org/wiki/tum_ardrone?action=info" rel="nofollow">Info</a></li><li><a class="nbattachments" href="http://ros.org/wiki/tum_ardrone?action=AttachFile" rel="nofollow">Attachments</a></li><li>
+<form class="actionsmenu" method="GET" action="/wiki/tum_ardrone">
+<div>
+    
+    <select name="action" onchange="if ((this.selectedIndex != 0) &amp;&amp;
+                      (this.options[this.selectedIndex].disabled == false)) {
+                this.form.submit();
+            }
+            this.selectedIndex = 0;">
+        <option selected="selected" value="show">More Actions:</option><option value="raw">Raw Text</option>
+<option value="print">Print View</option>
+<option value="show" disabled="disabled" class="disabled">Delete Cache</option>
+<option value="show" disabled="disabled" class="disabled">------------------------</option>
+<option value="SpellCheck">Check Spelling</option>
+<option value="LikePages">Like Pages</option>
+<option value="LocalSiteMap">Local Site Map</option>
+<option value="show" disabled="disabled" class="disabled">------------------------</option>
+<option value="RenamePage" disabled="disabled" class="disabled">Rename Page</option>
+<option value="DeletePage" disabled="disabled" class="disabled">Delete Page</option>
+<option value="show" disabled="disabled" class="disabled">------------------------</option>
+<option value="show" disabled="disabled" class="disabled">Subscribe User</option>
+<option value="show" disabled="disabled" class="disabled">------------------------</option>
+<option value="show" disabled="disabled" class="disabled">Remove Spam</option>
+<option value="show" disabled="disabled" class="disabled">Revert to this revision</option>
+<option value="PackagePages">Package Pages</option>
+<option value="SyncPages">Sync Pages</option>
+<option value="show" disabled="disabled" class="disabled">------------------------</option>
+<option value="CreatePdfDocument">CreatePdfDocument</option>
+<option value="Load">Load</option>
+<option value="RawFile">RawFile</option>
+<option value="Save">Save</option>
+<option value="SlideShow">SlideShow</option>
+    </select>
+    
+    
+</div>
+<script type="text/javascript">
+<!--// Init menu
+actionsMenuInit('More Actions:');
+//-->
+</script>
+</form>
+</li></ul>
+
+</div>
+<div class="sidepanel">
+<h1>User</h1>
+<ul id="username"><li><a href="http://ros.org/wiki/tum_ardrone?action=login" id="login" rel="nofollow">Login</a></li></ul>
+</div>
+</div>
+
+<div id="page" dir="ltr" lang="en">
+<div dir="ltr" id="content" lang="en"><span class="anchor" id="top"></span>
+<span class="anchor" id="line-1"></span><p class="line867">
+
+
+<span style="text-align:left">&nbsp;&nbsp;<a href="javascript:toggleDocStatus()">Documentation Status</a></span></p><div id="doc_status" style="background:#CCCCCC;display:none;margin-top:0px;margin-bottom:0px;padding-top:0px"><ul style="padding-top:5px;margin-top:0px;margin-bottom:0px;padding-bottom:5px;"><li><b>electric:</b> Cannot load information on <strong>name: tum_ardrone, distro: electric</strong>, which means that it is not yet in our index.
+Please see <a href="http://www.ros.org/wiki/Get%20Involved#Indexing_Your_.2A-ros-pkg_Repository_for_Documentation_Generation">this page</a> for information on how to submit your repository to our index.</li><br><li><b>fuerte:</b> Cannot load information on <strong>name: tum_ardrone, distro: fuerte</strong>, which means that it is not yet in our index.
+Please see <a href="http://www.ros.org/wiki/Get%20Involved#Indexing_Your_.2A-ros-pkg_Repository_for_Documentation_Generation">this page</a> for information on how to submit your repository to our index.</li><br><li><b>groovy:</b> Cannot load information on <strong>name: tum_ardrone, distro: groovy</strong>, which means that it is not yet in our index.
+Please see <a href="http://www.ros.org/wiki/Get%20Involved#Indexing_Your_.2A-ros-pkg_Repository_for_Documentation_Generation">this page</a> for information on how to submit your repository to our index.</li><br><li><b>hydro:</b> Cannot load information on <strong>name: tum_ardrone, distro: hydro</strong>, which means that it is not yet in our index.
+Please see <a href="http://www.ros.org/wiki/Get%20Involved#Indexing_Your_.2A-ros-pkg_Repository_for_Documentation_Generation">this page</a> for information on how to submit your repository to our index.</li><br></ul></div><div style="display: none;" class="version electric">Cannot load information on <strong>name: tum_ardrone, distro: electric</strong>, which means that it is not yet in our index.
+Please see <a href="http://www.ros.org/wiki/Get%20Involved#Indexing_Your_.2A-ros-pkg_Repository_for_Documentation_Generation">this page</a> for information on how to submit your repository to our index.</div>
+<div style="display: none;" class="version fuerte">Cannot load information on <strong>name: tum_ardrone, distro: fuerte</strong>, which means that it is not yet in our index.
+Please see <a href="http://www.ros.org/wiki/Get%20Involved#Indexing_Your_.2A-ros-pkg_Repository_for_Documentation_Generation">this page</a> for information on how to submit your repository to our index.</div>
+<div style="display: none;" class="version groovy">Cannot load information on <strong>name: tum_ardrone, distro: groovy</strong>, which means that it is not yet in our index.
+Please see <a href="http://www.ros.org/wiki/Get%20Involved#Indexing_Your_.2A-ros-pkg_Repository_for_Documentation_Generation">this page</a> for information on how to submit your repository to our index.</div>
+<div style="display: none;" class="version hydro">Cannot load information on <strong>name: tum_ardrone, distro: hydro</strong>, which means that it is not yet in our index.
+Please see <a href="http://www.ros.org/wiki/Get%20Involved#Indexing_Your_.2A-ros-pkg_Repository_for_Documentation_Generation">this page</a> for information on how to submit your repository to our index.</div> <span class="anchor" id="line-2"></span><div class="table-of-contents"><p class="table-of-contents-heading">Contents</p><ol><li>
+<a href="#Overview">Overview</a></li><li>
+<a href="#Nodes">Nodes</a></li><li>
+<a href="#Quickstart">Quickstart</a><ol><li>
+<a href="#Installation">Installation</a></li><li>
+<a href="#Run">Run</a></li><li>
+<a href="#Use">Use</a></li></ol></li><li>
+<a href="#Troubleshooting">Troubleshooting</a></li><li>
+<a href="#Notes">Notes</a></li><li>
+<a href="#Known_Bugs_.26_Issues">Known Bugs &amp; Issues</a></li><li>
+<a href="#License">License</a></li></ol></div><p class="line874"> <span class="anchor" id="line-3"></span><span class="anchor" id="line-4"></span></p><p class="line867">
+</p><h2 id="Overview">Overview</h2>
+<span class="anchor" id="line-5"></span><p class="line874">This package contains the implementation corresponding to the following publications:  <span class="anchor" id="line-6"></span></p><ul><li><p class="line891"><a class="https" href="https://vision.in.tum.de/_media/spezial/bib/engel12iros.pdf">Camera-Based Navigation of a Low-Cost Quadrocopter</a> (J. Engel, J. Sturm, D. Cremers) <span class="anchor" id="line-7"></span></p></li><li><p class="line891"><a class="https" href="https://vision.in.tum.de/_media/spezial/bib/engel12vicomor.pdf">Accurate Figure Flying with a Quadrocopter Using Onboard Visual and Inertial Sensing</a> (J. Engel, J. Sturm, D. Cremers) <span class="anchor" id="line-8"></span><span class="anchor" id="line-9"></span></p></li></ul><p class="line874">Abstract— In this paper, we describe a system that enables <span class="anchor" id="line-10"></span>a low-cost quadrocopter coupled with a ground-based laptop <span class="anchor" id="line-11"></span>to navigate autonomously in previously unknown and GPS- <span class="anchor" id="line-12"></span>denied environments. Our system consists of three components: <span class="anchor" id="line-13"></span>a monocular SLAM system, an extended Kalman filter for <span class="anchor" id="line-14"></span>data fusion and state estimation and a PID controller to <span class="anchor" id="line-15"></span>generate steering commands. Next to a working system, the <span class="anchor" id="line-16"></span>main contribution of this paper is a novel, closed-form solution <span class="anchor" id="line-17"></span>to estimate the absolute scale of the generated visual map <span class="anchor" id="line-18"></span>from inertial and altitude measurements. In an extensive set of <span class="anchor" id="line-19"></span>experiments, we demonstrate that our system is able to navigate <span class="anchor" id="line-20"></span>in previously unknown environments at absolute scale without <span class="anchor" id="line-21"></span>requiring artificial markers or external sensors. Furthermore, <span class="anchor" id="line-22"></span>we show (1) its robustness to temporary loss of visual tracking <span class="anchor" id="line-23"></span>and significant delays in the communication process, (2) the <span class="anchor" id="line-24"></span>elimination of odometry drift as a result of the visual SLAM <span class="anchor" id="line-25"></span>system and (3) accurate, scale-aware pose estimation and <span class="anchor" id="line-26"></span>navigation. <span class="anchor" id="line-27"></span><span class="anchor" id="line-28"></span></p><p class="line874">This is a video of the AR.Drone 1.0 flying autonomously, using this package: <span class="anchor" id="line-29"></span><span class="anchor" id="line-30"></span></p><p class="line867"><object height="295" width="480"><param name="movie" value="http://www.youtube.com/v/eznMokFQmpc&amp;hl=en_US&amp;fs=1&amp;hd=1"><param name="allowFullScreen" value="true"><param name="allowscriptaccess" value="always"><embed src="tum_ardrone%20-%20ROS%20Wiki_files/eznMokFQmpchlen_USfs1hd1.swf" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" height="295" width="480"></object> <span class="anchor" id="line-31"></span><span class="anchor" id="line-32"></span></p><p class="line862">The
+ code works for both the AR.Drone 1.0 and 2.0, the default-parameters 
+however are optimized for the AR.Drone 2.0 by now. You can find more 
+details on my research on my <a class="https" href="https://vision.in.tum.de/members/engelj">website</a>. <span class="anchor" id="line-33"></span><span class="anchor" id="line-34"></span></p><p class="line862">This Package builds on the well known monocular SLAM framework <a class="http" href="http://ewokrampage.wordpress.com/">PTAM</a> presented by Klein &amp; Murray in their <a class="http" href="http://www.robots.ox.ac.uk/%7Egk/publications.html#2007ISMAR">paper</a> at ISMAR07.  <span class="anchor" id="line-35"></span>Please study the original <a class="http" href="http://www.robots.ox.ac.uk/%7Egk/PTAM/">PTAM website</a> and the corresponding <a class="http" href="http://www.robots.ox.ac.uk/%7Egk/publications.html#2007ISMAR">paper</a> for more information on this part of the software. Also, be aware of the <a class="http" href="http://www.robots.ox.ac.uk/%7Egk/PTAM/download.html">license</a> that comes with it. <span class="anchor" id="line-36"></span><span class="anchor" id="line-37"></span><span class="anchor" id="line-38"></span><span class="anchor" id="line-39"></span></p><p class="line867">
+</p><h2 id="Nodes">Nodes</h2>
+<span class="anchor" id="line-40"></span><ul><li><p class="line891"><a class="http" href="http://ros.org/wiki/tum_ardrone/drone_stateestimation">drone_stateestimation</a>: Drone State-estimation, including PTAM &amp; Visualization. <span class="anchor" id="line-41"></span></p></li><li><p class="line891"><a class="http" href="http://ros.org/wiki/tum_ardrone/drone_autopilot">drone_autopilot</a>: Drone Controller, requires drone_stateestimation <span class="anchor" id="line-42"></span></p></li><li><p class="line891"><a class="http" href="http://ros.org/wiki/tum_ardrone/drone_gui">drone_gui</a>: GUI for controlling the drone (with a Joystick or KB) and for controlling the autopilot and the stateestimation node. <span class="anchor" id="line-43"></span><span class="anchor" id="line-44"></span><span class="anchor" id="line-45"></span></p></li></ul><p class="line867">
+</p><h2 id="Quickstart">Quickstart</h2>
+<span class="anchor" id="line-46"></span><p class="line867">
+</p><h3 id="Installation">Installation</h3>
+<span class="anchor" id="line-47"></span><p class="line862">1. Install the <a class="http" href="http://github.com/AutonomyLab/ardrone_autonomy#installation">ardrone_autonomy</a> package: <em>At the moment there are some minor changes to this package required, the easiest way is to check it out from <a class="http" href="http://github.com/tum-vision/ardrone_autonomy">this repository</a>, which contains a slightly older, but well-tested and already modified version.</em> To do this, run: <span class="anchor" id="line-48"></span><span class="anchor" id="line-49"></span><span class="anchor" id="line-50"></span><span class="anchor" id="line-51"></span><span class="anchor" id="line-52"></span><span class="anchor" id="line-53"></span><span class="anchor" id="line-54"></span><span class="anchor" id="line-55"></span><span class="anchor" id="line-56"></span><span class="anchor" id="line-57"></span><span class="anchor" id="line-58"></span><span class="anchor" id="line-59"></span><span class="anchor" id="line-60"></span><span class="anchor" id="line-61"></span><span class="anchor" id="line-62"></span><span class="anchor" id="line-63"></span><span class="anchor" id="line-64"></span></p><pre><span class="anchor" id="line-1-1"></span># cd into ros root dir
+<span class="anchor" id="line-2-1"></span>roscd
+<span class="anchor" id="line-3-1"></span>
+<span class="anchor" id="line-4-1"></span># clone repository
+<span class="anchor" id="line-5-1"></span>git clone git://github.com/tum-vision/ardrone_autonomy.git ardrone_autonomy
+<span class="anchor" id="line-6-1"></span>
+<span class="anchor" id="line-7-1"></span># add to ros path (if required)
+<span class="anchor" id="line-8-1"></span>export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:`pwd`/ardrone_autonomy
+<span class="anchor" id="line-9-1"></span>
+<span class="anchor" id="line-10-1"></span># build SDK (might require your confirmation to install some system libraries)
+<span class="anchor" id="line-11-1"></span>cd ardrone_autonomy
+<span class="anchor" id="line-12-1"></span>./build_sdk.sh
+<span class="anchor" id="line-13-1"></span>
+<span class="anchor" id="line-14-1"></span># build package
+<span class="anchor" id="line-15-1"></span>rosmake</pre><span class="anchor" id="line-65"></span><span class="anchor" id="line-66"></span><p class="line874">2. Install tum_ardrone package: <span class="anchor" id="line-67"></span><span class="anchor" id="line-68"></span><span class="anchor" id="line-69"></span><span class="anchor" id="line-70"></span><span class="anchor" id="line-71"></span><span class="anchor" id="line-72"></span><span class="anchor" id="line-73"></span><span class="anchor" id="line-74"></span><span class="anchor" id="line-75"></span><span class="anchor" id="line-76"></span><span class="anchor" id="line-77"></span><span class="anchor" id="line-78"></span><span class="anchor" id="line-79"></span></p><pre><span class="anchor" id="line-1-2"></span># cd into ros root dir
+<span class="anchor" id="line-2-2"></span>roscd
+<span class="anchor" id="line-3-2"></span>
+<span class="anchor" id="line-4-2"></span># clone repository
+<span class="anchor" id="line-5-2"></span>git clone git://github.com/tum-vision/tum_ardrone.git tum_ardrone
+<span class="anchor" id="line-6-2"></span>
+<span class="anchor" id="line-7-2"></span># add to ros path (if required)
+<span class="anchor" id="line-8-2"></span>export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:`pwd`/tum_ardrone
+<span class="anchor" id="line-9-2"></span>
+<span class="anchor" id="line-10-2"></span># build package (may take up to 10 minutes)
+<span class="anchor" id="line-11-2"></span>rosmake tum_ardrone</pre><span class="anchor" id="line-80"></span><span class="anchor" id="line-81"></span><span class="anchor" id="line-82"></span><p class="line867">
+</p><h3 id="Run">Run</h3>
+<span class="anchor" id="line-83"></span><p class="line867"><span class="anchor" id="line-84"></span><span class="anchor" id="line-85"></span><span class="anchor" id="line-86"></span><span class="anchor" id="line-87"></span><span class="anchor" id="line-88"></span><span class="anchor" id="line-89"></span><span class="anchor" id="line-90"></span><span class="anchor" id="line-91"></span><span class="anchor" id="line-92"></span><span class="anchor" id="line-93"></span><span class="anchor" id="line-94"></span><span class="anchor" id="line-95"></span></p><pre><span class="anchor" id="line-1-3"></span># run driver
+<span class="anchor" id="line-2-3"></span>rosrun ardrone_autonomy ardrone_driver
+<span class="anchor" id="line-3-3"></span>
+<span class="anchor" id="line-4-3"></span># run stateestimation node
+<span class="anchor" id="line-5-3"></span>rosrun tum_ardrone drone_stateestimation
+<span class="anchor" id="line-6-3"></span>
+<span class="anchor" id="line-7-3"></span># run autopilot node
+<span class="anchor" id="line-8-3"></span>rosrun tum_ardrone drone_autopilot
+<span class="anchor" id="line-9-3"></span>
+<span class="anchor" id="line-10-3"></span># run gui node
+<span class="anchor" id="line-11-3"></span>rosrun tum_ardrone drone_gui</pre><span class="anchor" id="line-96"></span><span class="anchor" id="line-97"></span><p class="line867">
+</p><h3 id="Use">Use</h3>
+<span class="anchor" id="line-98"></span><p class="line867">
+</p><h5 id="Manual_Keyboard_control">Manual Keyboard control</h5>
+<span class="anchor" id="line-99"></span><ul><li>focus drone_gui window <span class="anchor" id="line-100"></span></li><li>press ESC to activate KB control <span class="anchor" id="line-101"></span></li><li><p class="line862">fly around with KB (see <a class="http" href="http://ros.org/wiki/tum_ardrone/drone_gui#Keyboard_Control">here</a> for key assignments) <span class="anchor" id="line-102"></span><span class="anchor" id="line-103"></span></p></li></ul><p class="line867">
+</p><h5 id="Manual_Joystick_control">Manual Joystick control</h5>
+<span class="anchor" id="line-104"></span><p class="line874">assuming a plugged-in PS3 six-axis controller, with set rights. <span class="anchor" id="line-105"></span></p><ul><li><p class="line891"><tt>rosrun&nbsp;joy&nbsp;joy_node</tt> <span class="anchor" id="line-106"></span></p></li><li>press PS button on controller to activate it <span class="anchor" id="line-107"></span></li><li><p class="line862">fly around (see <a class="http" href="http://ros.org/wiki/tum_ardrone/drone_gui#Joystick_Control">here</a> for button assignments) <span class="anchor" id="line-108"></span><span class="anchor" id="line-109"></span></p></li></ul><p class="line867">
+</p><h5 id="Autopilot">Autopilot</h5>
+<span class="anchor" id="line-110"></span><ul><li>place the drone on the
+ ground, with enough open space around it. There should be some 
+structure with enough keypoints in front of it, ideally at a distance of
+ 2m to 10m. <span class="anchor" id="line-111"></span></li><li><p class="line862">read <a class="http" href="http://ros.org/wiki/tum_ardrone/drone_stateestimation#Tips_for_good_PTAM_and_Scale_Estimation_Performance">Tips for good PTAM and Scale Estimation Performance</a> <span class="anchor" id="line-112"></span></p></li><li><p class="line862">load contents of file <em>initDemo.txt</em> (left, below the big text field in the GUI) <span class="anchor" id="line-113"></span></p></li><li><p class="line862">click <em>Clear and Send</em> (best to click <em>Reset</em> first). <span class="anchor" id="line-114"></span>=&gt; drone will takeoff &amp; initialize PTAM, then fly a small figure (1m up, 1m down, 1x1m horizontal square). <span class="anchor" id="line-115"></span></p></li><li><p class="line862">you can <em>interrupt</em> the figure anytime by interactively setting a relative target: click on video (relative to current position); see <a class="http" href="http://ros.org/wiki/tum_ardrone/drone_stateestimation#Video_Window">here</a>. <span class="anchor" id="line-116"></span><strong>First fly up at least 1m to facilitate a good scale estimate, do not start e.g. by flying horizontally over uneven terrain.</strong> <span class="anchor" id="line-117"></span></p></li><li>always have a finger on ESC or on the joystick for emergency-keyboard control. <span class="anchor" id="line-118"></span><span class="anchor" id="line-119"></span><span class="anchor" id="line-120"></span></li></ul><p class="line867">
+</p><h2 id="Troubleshooting">Troubleshooting</h2>
+<span class="anchor" id="line-121"></span><p class="line867">
+</p><h5 id="Drone_does_not_start">Drone does not start</h5>
+<span class="anchor" id="line-122"></span><ul><li><p class="line862">battery empty? (drone does not start if battery &lt; ~18%) <span class="anchor" id="line-123"></span></p></li><li>drone in emergency state? (if so, the four LED's are red. click Emergency to reset). <span class="anchor" id="line-124"></span></li></ul><p class="line867">
+</p><h5 id="Cannot_control_drone">Cannot control drone</h5>
+<span class="anchor" id="line-125"></span><ul><li>selected correct control source? maybe re-select. <span class="anchor" id="line-126"></span></li></ul><p class="line867">
+</p><h5 id="Drone_flies_unstable_using_the_autopilot">Drone flies unstable using the autopilot</h5>
+<span class="anchor" id="line-127"></span><ul><li><p class="line862">adjust / reduce control parameters using dynamic_reconfigure (see <a class="http" href="http://ros.org/wiki/tum_ardrone/drone_autopilot#Dynamically_Reconfigurable_Parameters">here</a>). First, try reducing <tt>aggressiveness</tt>,
+ which should make the drone fly slower, but also more stable. If that 
+does not help, reduce the differential weights, in particular for 
+roll/pitch control (<tt>Kp_rp</tt>). This may be necessary in particular if PTAM's pose estimates are inaccurate (e.g. because all keypoints are very far away). <span class="anchor" id="line-128"></span></p></li></ul><p class="line867">
+</p><h5 id="drone_stateestimation:_PTAM_initialization_fails:_.22IMU_Baseline_smaller_than_5cm.2C_try_again:_XXX.22">drone_stateestimation: PTAM initialization fails: "IMU Baseline smaller than 5cm, try again: XXX"</h5>
+<span class="anchor" id="line-129"></span><ul><li><p class="line862">In 
+order to initialize PTAM, the stateestimation node needs some metric 
+scale information (i.e. horizontal velocity estimates or ultrasound 
+altimeter measurements). These measurements however are only sent while 
+flying (at least for the 2.0 drone), hence PTAM can only run properly / 
+be initialized while flying. You may also <a class="http" href="http://ros.org/wiki/tum_ardrone/drone_stateestimation#Recording_.26_Playing_back_flights">record a flight and then replay it</a>, if you want to test without actually flying. <span class="anchor" id="line-130"></span></p></li></ul><p class="line867">
+</p><h5 id="drone_stateestimation:_XXXs_between_two_consecutive_navinfos._This_system_requires_Navinfo_at_200Hz...">drone_stateestimation: XXXs between two consecutive navinfos. This system requires Navinfo at 200Hz...</h5>
+<span class="anchor" id="line-131"></span><ul><li>usually, with 
+navdata_debug set to 0, the drone sends a new navdata package every 5ms.
+ The above message means that there was no navdata received for XXXs, 
+which, if it happens continuously, leads to a poor state estimate and 
+flight performance. Possible reasons: If the publish frequency on 
+/ardrone/navdata (displayed on UI window) is around 50, this means the 
+driver's loop_rate is set incorrectly; if it is around 15, navdata_demo 
+is set to 1. Another reason might be a bad network connection / high 
+pings, try restarting the drone or going somewhere with less WLan 
+clutter. <span class="anchor" id="line-132"></span><span class="anchor" id="line-133"></span><span class="anchor" id="line-134"></span></li></ul><p class="line867">
+</p><h5 id="Drone_broken">Drone broken</h5>
+<span class="anchor" id="line-135"></span><ul><li>buy a new one. <span class="anchor" id="line-136"></span><span class="anchor" id="line-137"></span></li></ul><p class="line867">
+</p><h2 id="Notes">Notes</h2>
+<span class="anchor" id="line-138"></span><ul><li><p class="line862">the channel <em>/tum_ardrone/com</em>
+ is used for communication between the nodes. to see what's going on 
+internally, it is generally a good idea to echo this channel. <span class="anchor" id="line-139"></span><span class="anchor" id="line-140"></span><span class="anchor" id="line-141"></span></p></li></ul><p class="line867">
+</p><h2 id="Known_Bugs_.26_Issues">Known Bugs &amp; Issues</h2>
+<span class="anchor" id="line-142"></span><ul><li>as the software was originally developed for the Ar.Drone 1.0, the pressure sensor and magnetometer are not used. <span class="anchor" id="line-143"></span></li><li>drone_stateestimation crashes occasionally when PTAM init fails (crash occurs in PTAM code).  <span class="anchor" id="line-144"></span>Happens in particular if there is no baseline in between the first two keyframes, hardly ever happens in praxis. <span class="anchor" id="line-145"></span><span class="anchor" id="line-146"></span></li></ul><p class="line867">
+</p><h2 id="License">License</h2>
+<span class="anchor" id="line-147"></span><p class="line862">The major 
+part of this software package - that is everything except PTAM - is 
+licensed under the GNU General Public License Version 3 (GPLv3), see <a class="http" href="http://www.gnu.org/licenses/gpl.html">http://www.gnu.org/licenses/gpl.html</a>.  <span class="anchor" id="line-148"></span>PTAM (comprised of all files in /src/stateestimation/PTAM) has it's own licence, see <a class="http" href="http://www.robots.ox.ac.uk/%7Egk/PTAM/download.html">http://www.robots.ox.ac.uk/~gk/PTAM/download.html</a>. This licence in particular prohibits commercial use of the software. <span class="anchor" id="line-149"></span><span class="anchor" id="line-150"></span></p><p class="line867"><span class="anchor" id="line-151"></span></p><p class="line867"><span class="anchor" id="line-152"></span><span class="anchor" id="bottom"></span></p></div></div>
+<div id="pagebottom"></div>
+</div>
+
+<p id="pageinfo" class="info" dir="ltr" lang="en">Wiki: tum_ardrone  (last edited 2013-02-12 11:40:44 by <span title="JakobEngel @ eduroam-hg-dock-1-51.ethz.ch[129.132.15.51]"><a class="nonexistent" href="http://ros.org/wiki/JakobEngel" title="JakobEngel @ eduroam-hg-dock-1-51.ethz.ch[129.132.15.51]">JakobEngel</a></span>)</p>
+
+
+
+
+<div class="footer">
+Except where otherwise noted, the ROS wiki is licensed under <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0</a>.
+</div>
+
+  </div> <!-- /#dpage-inner, /#dpage -->
+
+
+
+
+
+</body></html>

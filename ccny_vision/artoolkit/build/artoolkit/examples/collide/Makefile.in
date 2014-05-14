@@ -1,0 +1,30 @@
+INC_DIR= ../../include
+LIB_DIR= ../../lib
+BIN_DIR= ../../bin
+
+LDFLAG=@LDFLAG@ -L$(LIB_DIR)
+LIBS= -lARgsub -lARvideo -lAR @LIBS@
+CFLAG= @CFLAG@ -I$(INC_DIR)
+
+OBJS = object.o
+HEADDERS = object.h
+
+all: $(BIN_DIR)/collideTest
+
+$(BIN_DIR)/collideTest: collideTest.o $(OBJS)
+	cc -o $(BIN_DIR)/collideTest collideTest.o $(OBJS) $(LDFLAG) $(LIBS)
+
+collideTest.o: collideTest.c $(HEADDERS)
+	cc -c $(CFLAG) collideTest.c
+
+object.o: object.c $(HEADDERS)
+	cc -c $(CFLAG) object.c
+
+clean:
+	rm -f *.o
+	rm -f $(BIN_DIR)/collideTest
+
+allclean:
+	rm -f *.o
+	rm -f $(BIN_DIR)/collideTest
+	rm -f Makefile

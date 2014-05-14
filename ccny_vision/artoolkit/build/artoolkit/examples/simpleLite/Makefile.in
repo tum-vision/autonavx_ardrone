@@ -1,0 +1,27 @@
+INC_DIR= ../../include
+LIB_DIR= ../../lib
+BIN_DIR= ../../bin
+
+LDFLAG=@LDFLAG@ -L$(LIB_DIR)
+LIBS= -lARgsub_lite -lARvideo -lAR @LIBS@
+CFLAG= @CFLAG@ -I$(INC_DIR)
+
+OBJS =
+HEADERS =
+
+all: $(BIN_DIR)/simpleLite
+
+$(BIN_DIR)/simpleLite: simpleLite.o $(OBJS)
+	cc -o $(BIN_DIR)/simpleLite simpleLite.o $(OBJS) $(LDFLAG) $(LIBS)
+
+simpleLite.o: simpleLite.c $(HEADERS)
+	cc -c $(CFLAG) simpleLite.c
+
+clean:
+	rm -f *.o
+	rm -f $(BIN_DIR)/simpleLite
+
+allclean:
+	rm -f *.o
+	rm -f $(BIN_DIR)/simpleLite
+	rm -f Makefile

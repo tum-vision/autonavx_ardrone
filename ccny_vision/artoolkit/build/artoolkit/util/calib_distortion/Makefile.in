@@ -1,0 +1,29 @@
+INC_DIR= ../../include
+LIB_DIR= ../../lib
+BIN_DIR= ../../bin
+
+LDFLAG=@LDFLAG@ -L$(LIB_DIR)
+LIBS= -lARgsub_lite -lARvideo -lAR @LIBS@
+CFLAG= @CFLAG@ -I$(INC_DIR)
+
+
+all: $(BIN_DIR)/calib_dist
+
+$(BIN_DIR)/calib_dist: calib_dist.o check_dist.o
+	cc -o $(BIN_DIR)/calib_dist calib_dist.o check_dist.o\
+	   $(LDFLAG) $(LIBS)
+
+calib_dist.o: calib_dist.c calib_dist.h
+	cc -c $(CFLAG) calib_dist.c
+
+check_dist.o: check_dist.c calib_dist.h
+	cc -c $(CFLAG) check_dist.c
+
+clean:
+	rm -f calib_dist.o check_dist.o
+	rm -f $(BIN_DIR)/calib_dist
+
+allclean:
+	rm -f calib_dist.o check_dist.o
+	rm -f $(BIN_DIR)/calib_dist
+	rm -f Makefile
