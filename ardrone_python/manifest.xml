@@ -1,0 +1,16 @@
+<package>
+  <description brief="ardrone_python">
+
+     ardrone_python
+
+  </description>
+  <author>Juergen Sturm</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/ardrone_python</url>
+  <depend package="ardrone_autonomy"/>
+  <depend package="rospy"/>
+
+</package>
+
+
