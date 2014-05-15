@@ -3,12 +3,10 @@ import rospy
 import roslib; roslib.load_manifest('ardrone_python')
 from ardrone_autonomy.msg import Navdata
 from std_msgs.msg import Empty
-from geometry_msgs.msg import Twist
-
-pub = None
+from geometry_msgs.msg import Twist, Vector3
 
 def callback(navdata):
-    print("received odometry message: vx=%f vy=%f z=%f"%(navdata.vx,navdata.vy,navdata.altd))
+    print("received odometry message: vx=%f vy=%f z=%f yaw=%f"%(navdata.vx,navdata.vy,navdata.altd,navdata.rotZ))
     
 if __name__ == '__main__':
     rospy.init_node('example_node', anonymous=True)
@@ -22,10 +20,26 @@ if __name__ == '__main__':
     pub_land = rospy.Publisher('/ardrone/land', Empty)
     pub_reset = rospy.Publisher('/ardrone/reset', Empty)
     
+    print("ready!")
     rospy.sleep(1.0)
+    
+    print("takeoff..")
     pub_takeoff.publish(Empty())
     rospy.sleep(5.0)
+    
+    print("turning around yaw axis..")
+    pub_velocity.publish(Twist(Vector3(0,0,0),Vector3(0,0,1)))
+    rospy.sleep(2.0)
+    
+    print("flying forward..")
+    pub_velocity.publish(Twist(Vector3(0.2,0,0),Vector3(0,0,0)))
+    rospy.sleep(2.0)
+
+    print("stop..")
+    pub_velocity.publish(Twist(Vector3(0,0,0),Vector3(0,0,0)))
+    rospy.sleep(5.0)
+    
+    print("land..")
     pub_land.publish(Empty())
     
-    rospy.spin()
-
+    print("done!")
