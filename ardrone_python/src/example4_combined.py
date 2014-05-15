@@ -6,8 +6,9 @@ from std_msgs.msg import Empty
 from geometry_msgs.msg import Twist, Vector3
 
 def callback(navdata):
-    print("received odometry message: vx=%f vy=%f z=%f yaw=%f"%(navdata.vx,navdata.vy,navdata.altd,navdata.rotZ))
-    
+    t = navdata.header.stamp.to_sec()
+    print("received odometry message: time=%f battery=%f vx=%f vy=%f z=%f yaw=%f"%(t,navdata.batteryPercent,navdata.vx,navdata.vy,navdata.altd,navdata.rotZ))
+
 if __name__ == '__main__':
     rospy.init_node('example_node', anonymous=True)
     
@@ -27,19 +28,12 @@ if __name__ == '__main__':
     pub_takeoff.publish(Empty())
     rospy.sleep(5.0)
     
-    print("turning around yaw axis..")
-    pub_velocity.publish(Twist(Vector3(0,0,0),Vector3(0,0,1)))
-    rospy.sleep(2.0)
+    while not rospy.is_shutdown():
+      # fly forward..
+      pub_velocity.publish(Twist(Vector3(0.1,0,0),Vector3(0,0,0)))
+      rospy.sleep(2.0)
+      
+      # fly backward..
+      pub_velocity.publish(Twist(Vector3(-0.1,0,0),Vector3(0,0,0)))
+      rospy.sleep(2.0)
     
-    print("flying forward..")
-    pub_velocity.publish(Twist(Vector3(0.2,0,0),Vector3(0,0,0)))
-    rospy.sleep(2.0)
-
-    print("stop..")
-    pub_velocity.publish(Twist(Vector3(0,0,0),Vector3(0,0,0)))
-    rospy.sleep(5.0)
-    
-    print("land..")
-    pub_land.publish(Empty())
-    
-    print("done!")
