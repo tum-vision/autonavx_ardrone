@@ -7,7 +7,6 @@ if __name__ == '__main__':
     rospy.init_node('example_node', anonymous=True)
     
     # publish commands (send to quadrotor)
-    pub_velocity = rospy.Publisher('/cmd_vel', Twist)
     pub_takeoff = rospy.Publisher('/ardrone/takeoff', Empty)
     pub_land = rospy.Publisher('/ardrone/land', Empty)
     pub_reset = rospy.Publisher('/ardrone/reset', Empty)
