@@ -1,0 +1,24 @@
+<package>
+  <name>ardrone_joystick</name>
+  <version>1.0.0</version>
+  <description>ardrone_joystick</description>
+
+  <maintainer email="vlad.usenko@tum.de">Vladyslav Usenko</maintainer>
+
+  <author>Nikolas Engelhard</author>
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>std_srvs</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>cmake_modules</build_depend>
+
+  <run_depend>geometry_msgs</run_depend>
+  <run_depend>std_srvs</run_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>sensor_msgs</run_depend>
+
+</package>

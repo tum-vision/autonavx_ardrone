@@ -1,0 +1,19 @@
+<package>
+  <name>ardrone_python</name>
+  <version>1.0.0</version>
+  <description>ardrone_python</description>
+
+  <maintainer email="vlad.usenko@tum.de">Vladyslav Usenko</maintainer>
+
+  <author>Juergen Sturm</author>
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>ardrone_autonomy</build_depend>
+  <build_depend>rospy</build_depend>
+
+  <run_depend>ardrone_autonomy</run_depend>
+  <run_depend>rospy</run_depend>
+
+</package>
